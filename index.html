@@ -15,20 +15,19 @@
   <input type="submit" value="Click to start simulation." value="Submit" onclick="performSimulation()>
 </form>
 
-//<button onclick="performSimulation()">Click here to start the simulation.</button>
-
 <p id="simulation"></p>
 
 <script>
 function performSimulation() {
 	var set = [];
+	var reps = document.getElementById("reps").value;
 	var sum = 0;
 	var j;
 	var i;
 	var over70 = 0;
 	var myWindow = window.open("", "Simulation", "left=600, top=0, width=900, height=700");
 	myWindow.document.write("</br>");
-	for(j = 0; j < 50; j++){
+	for(j = 0; j < reps; j++){
 		sum = 0;
 		myWindow.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
 		for(i = 0; i < 15; i++){
@@ -50,7 +49,7 @@ function performSimulation() {
 		}
 	}
 	
-	myWindow.document.write("</br>" + "</br>" + "Out of 50 trials, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + (over70/50*100).toFixed(2) + "%");
+	myWindow.document.write("</br>" + "</br>" + "Out of " + reps + " trials, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + ((over70/reps)*100).toFixed(2) + "%");
 }
 function pad2(number) {
      	return (number < 10 ? '0' : '') + number  
