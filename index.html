@@ -18,11 +18,12 @@ function performSimulation() {
 	var i;
 	var myWindow = window.open("", "Simulation", "width=2500, height=1500");
 	for(j = 0; j < 50; j++){
+		sum = 0;
 		myWindow.document.write("	Rolls :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random().toFixed(2) * 100));
 			sum += set[i]
-			myWindow.document.write(set[i]);
+			myWindow.document.write(pad2(set[i]));
 			if(i < 14){
 				myWindow.document.write(", ");
 			}
@@ -30,6 +31,9 @@ function performSimulation() {
 		myWindow.document.write("	|    Means :    " + (sum/15) + "</br>");
     		//document.getElementById("simulation").innerHTML = x;
 	}
+}
+function pad2(number) {
+     	return (number < 10 ? '0' : '') + number  
 }
 </script>
 
