@@ -11,21 +11,20 @@
 <p id="simulation"></p>
 
 <script>
-document.getElementById("simulation").innerHTML = "test";
 function performSimulation() {
 	var set = [];
 	var sum = 0;
 	for(i = 0; j < 50; j++){
-		document.write("	Rolls :    ");
+		document.getElementById("simulation").innerHTML = "	Rolls :    ";
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random().toFixed(2) * 100));
 			sum += set[i]
-			document.write(set[i]);
+			document.getElementById("simulation").innerHTML = set[i];
 			if(i < 14){
-				document.write(", ");
+				document.getElementById("simulation").innerHTML = ", ";
 			}
 		}
-		document.write("	|    Means :    " + (sum/15) + "\n");
+		document.getElementById("simulation").innerHTML = "	|    Means :    " + (sum/15) + "\n";
     		//document.getElementById("simulation").innerHTML = x;
 	}
 }
