@@ -2,11 +2,20 @@
 <html>
 <body>
 
-<p>Here's a simple website I made that will perform the simulation. Calculator works get really tedious after a while. </p>
+<p>Here's a simple website I made that will perform the simulation, Since calculator works get really, really tedious after a while. </p>
 
-<p>please excuse the lack of styling</p>
+<p>Please excuse the lack of styling. It's not pretty, but it works.</p>
+	
+<p>To performs multiple simulation, simply click the button multiple times, and scroll down.
+	
+<form onsubmit="return false;">
+  Number of trials to perform:         
+  <input type="text" id="reps" value=50><br>
+  <br>
+  <input type="submit" name="Click to start simulation." value="Submit" onclick="performSimulation()>
+</form>
 
-<button onclick="performSimulation()">Click here to start the simulation.</button>
+//<button onclick="performSimulation()">Click here to start the simulation.</button>
 
 <p id="simulation"></p>
 
