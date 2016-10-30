@@ -9,9 +9,15 @@
 <p>To performs multiple simulation, simply click the button multiple times, and scroll down.
 	
 <form id="form" onsubmit="return false;">
-	Number of trials to perform :
+	(Part A: First roll for 10s digit) Number of trials to perform :
    	<input type="text" value="50" id="input" />
-    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION (scroll to the bottom for result)" onclick="performSimulation();" />
+    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION A (scroll to the bottom for result)" onclick="performSimulation();" />
+</form>
+	
+<form id="formB" onsubmit="return false;">
+	(Part B: Largest roll for 10s digit) Number of trials to perform :
+   	<input type="text" value="50" id="inputB" />
+    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION A (scroll to the bottom for result)" onclick="performSimulation();" />
 </form>
 
 <p id="simulation"></p>
@@ -24,7 +30,7 @@ function performSimulation() {
 	var j;
 	var i;
 	var over70 = 0;
-	var myWindow = window.open("", "Simulation", "left=600, top=0, width=900, height=700");
+	var myWindow = window.open("", "SimulationA", "left=600, top=0, width=900, height=700");
 	myWindow.document.write("</br>");
 	for(j = 0; j < reps; j++){
 		sum = 0;
@@ -50,6 +56,44 @@ function performSimulation() {
 	
 	myWindow.document.write("</br>" + "</br>" + "Out of " + reps + " trials, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + ((over70/reps)*100).toFixed(2) + "%");
 }
+
+function performSimulationB() {
+	var set = [];
+	var reps = document.getElementById("inputB").value;
+	var sum = 0;
+	var j;
+	var i;
+	var over70 = 0;
+	var myWindowB = window.open("", "SimulationB", "left=600, top=0, width=900, height=700");
+	myWindowB.document.write("</br>");
+	for(j = 0; j < reps; j++){
+		sum = 0;
+		myWindowB.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
+		for(i = 0; i < 15; i++){
+			set[i] = Math.floor((Math.random() * 100));
+			if(Math.floor(set[i]/10) < set[i]%10){
+				set[i] = ((set[i]%10)*10) + (Math.floor(set[i]/10));
+			}
+			myWindowB.document.write(pad2(set[i]));
+			if(i < 14){
+				myWindowB.document.write(", ");
+			}
+			if(set[i] == 0){
+				set[i] = 100;
+			}
+			sum += set[i];
+		}
+		myWindowB.document.write("	|    Means :    " + (sum/15).toFixed(2));
+    		//document.getElementById("simulation").innerHTML = x;
+		
+		if(sum/15 >= 70){
+			over70++;
+		}
+	}
+	
+	myWindowB.document.write("</br>" + "</br>" + "Out of " + reps + " trials, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + ((over70/reps)*100).toFixed(2) + "%");
+}
+
 function pad2(number) {
      	return (number < 10 ? '0' : '') + number  
 }
