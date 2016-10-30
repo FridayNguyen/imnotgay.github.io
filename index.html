@@ -42,7 +42,7 @@ function performSimulation() {
 		}
 	}
 	
-	myWindow.document.write("</br></br>" + "Out of 50 repetition, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + over70/50*100 + "%");
+	myWindow.document.write("</br>" + " DEBUG: screen size is" + screen.width + screen.height + "</br>" + "Out of 50 repetition, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + over70/50*100 + "%");
 }
 function pad2(number) {
      	return (number < 10 ? '0' : '') + number  
