@@ -16,10 +16,11 @@ function performSimulation() {
 	var sum = 0;
 	var j;
 	var i;
-	var myWindow = window.open("", "Simulation", "width=2500, height=1500");
+	var over70 = 0;
+	var myWindow = window.open("", "Simulation", "right=0, top=0, bottom=0, width=1000");
 	for(j = 0; j < 50; j++){
 		sum = 0;
-		myWindow.document.write("	Rolls :    ");
+		myWindow.document.write("	Rolls #" + (j + 1) + " :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random() * 100));
 			sum += set[i]
@@ -30,7 +31,13 @@ function performSimulation() {
 		}
 		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2) + "</br>");
     		//document.getElementById("simulation").innerHTML = x;
+		
+		if(sum/15 >= 70){
+			over70++;
+		}
 	}
+	
+	myWindow.document.write("</br></br>" + "Out of 50 repetition, the mean value is >= 70 for " + "over70" + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + over70/50*100 + "%");
 }
 function pad2(number) {
      	return (number < 10 ? '0' : '') + number  
