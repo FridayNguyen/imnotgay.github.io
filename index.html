@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+<body>
+
+<p>Here's a simple website I made that will perform the simulation. Calculator works get really tedious after a while. </p>
+
+<p>please excuse the lack of styling</p>
+
+<button onclick="performSimulation()">Try it</button>
+
+<p id="simulation"></p>
+
+<script>
+function performSimulation() {
+	var set = [];
+	var sum = 0;
+	for(i = 0; j < 50; j++){
+		document.write("	Rolls :    ");
+		for(i = 0; i < 15; i++){
+			set[i] = Math.floor((Math.random().toFixed(2) * 100));
+			sum += set[i]
+			document.write(set[i]);
+			if(i < 14){
+				document.write(", ");
+			}
+		}
+		document.write("	|    Means :    " + (sum/15) + "\n");
+    		//document.getElementById("simulation").innerHTML = x;
+}
+</script>
+
+</body>
 </html>
