@@ -6,7 +6,7 @@
 
 <p>please excuse the lack of styling</p>
 
-<button onclick="performSimulation()">Start</button>
+<button onclick="performSimulation()">Click here to start the simulation.</button>
 
 <p id="simulation"></p>
 
@@ -17,7 +17,7 @@ function performSimulation() {
 	var j;
 	var i;
 	var over70 = 0;
-	var myWindow = window.open("", "Simulation", "left=600, top=0, width=900, height=1000");
+	var myWindow = window.open("", "Simulation", "left=600, top=0, width=900, height=700");
 	for(j = 0; j < 50; j++){
 		sum = 0;
 		myWindow.document.write("</br>" + "	Rolls #" + pad2(j + 1) + " :    ");
