@@ -14,9 +14,11 @@
 function performSimulation() {
 	var set = [];
 	var sum = 0;
-	for(int j = 0; j < 50; j++){
+	var j;
+	var i;
+	for(j = 0; j < 50; j++){
 		document.write("	Rolls :    ");
-		for(int i = 0; i < 15; i++){
+		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random().toFixed(2) * 100));
 			sum += set[i]
 			document.write(set[i]);
