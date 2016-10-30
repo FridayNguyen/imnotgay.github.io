@@ -17,7 +17,7 @@
 <form id="formB" onsubmit="return false;">
  	<br>(Part B: Largest roll for 10s digit) Number of trials to perform :
    	<input type="text" value="50" id="inputB" />
-    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION A (scroll to the bottom for result)" onclick="performSimulation();" />
+    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION A (scroll to the bottom for result)" onclick="performSimulationB();" />
 </form>
 
 <p id="simulation"></p>
@@ -71,8 +71,11 @@ function performSimulationB() {
 		myWindowB.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random() * 100));
-			if(Math.floor(set[i]/10) < set[i]%10){
+			if(set[i] > 9 && Math.floor(set[i]/10) < set[i]%10){
 				set[i] = ((set[i]%10)*10) + (Math.floor(set[i]/10));
+			}
+			else if(set[i] < 10){
+				set[i] = set[i]*10;
 			}
 			myWindowB.document.write(pad2(set[i]));
 			if(i < 14){
