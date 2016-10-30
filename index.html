@@ -21,14 +21,14 @@ function performSimulation() {
 		sum = 0;
 		myWindow.document.write("	Rolls :    ");
 		for(i = 0; i < 15; i++){
-			set[i] = Math.floor((Math.random().toFixed(2) * 100));
+			set[i] = Math.floor((Math.random() * 100));
 			sum += set[i]
 			myWindow.document.write(pad2(set[i]));
 			if(i < 14){
 				myWindow.document.write(", ");
 			}
 		}
-		myWindow.document.write("	|    Means :    " + (sum/15) + "</br>");
+		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2) + "</br>");
     		//document.getElementById("simulation").innerHTML = x;
 	}
 }
