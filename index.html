@@ -6,7 +6,7 @@
 
 <p>please excuse the lack of styling</p>
 
-<button onclick="performSimulation()">Startt</button>
+<button onclick="performSimulation()">Start</button>
 
 <p id="simulation"></p>
 
@@ -14,9 +14,9 @@
 function performSimulation() {
 	var set = [];
 	var sum = 0;
-	for(i = 0; j < 50; j++){
+	for(int j = 0; j < 50; j++){
 		document.write("	Rolls :    ");
-		for(i = 0; i < 15; i++){
+		for(int i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random().toFixed(2) * 100));
 			sum += set[i]
 			document.write(set[i]);
