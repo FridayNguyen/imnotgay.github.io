@@ -8,11 +8,9 @@
 	
 <p>To performs multiple simulation, simply click the button multiple times, and scroll down.
 	
-<form onsubmit="return false;">
-  Number of trials to perform:         
-  <input type="text" id="input" value=50><br>
-  <br>
-  <input type="submit" value="Click to start simulation." onclick="performSimulation()>
+<form id="form" onsubmit="return false;">
+    <input type="text" value="50" id="input" />
+    <input type="submit" value="Click here to perform simulation" onclick="performSimulation();" />
 </form>
 
 <p id="simulation"></p>
