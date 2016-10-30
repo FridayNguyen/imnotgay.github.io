@@ -17,22 +17,22 @@ function performSimulation() {
 	var j;
 	var i;
 	var over70 = 0;
-	var myWindow = window.open("", "Simulation", "left=0, top=0, bottom=0, width=1000");
+	var myWindow = window.open("", "Simulation", "left=0, top=0, width=700, height=screen.height");
 	for(j = 0; j < 50; j++){
 		sum = 0;
-		myWindow.document.write("	Rolls #" + pad2(j + 1) + " :    ");
+		myWindow.document.write("</br>" + "	Rolls #" + pad2(j + 1) + " :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random() * 100));
 			myWindow.document.write(pad2(set[i]));
 			if(i < 14){
 				myWindow.document.write(", ");
 			}
-			if(set[i] == 00){
+			if(set[i] == 0){
 				set[i] = 100;
 			}
 			sum += set[i];
 		}
-		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2) + "</br>");
+		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2));
     		//document.getElementById("simulation").innerHTML = x;
 		
 		if(sum/15 >= 70){
