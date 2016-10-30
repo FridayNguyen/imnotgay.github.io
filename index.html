@@ -16,17 +16,18 @@ function performSimulation() {
 	var sum = 0;
 	var j;
 	var i;
+	var myWindow = window.open("", "Simulation", "width=200, height=100");
 	for(j = 0; j < 50; j++){
-		document.write("	Rolls :    ");
+		myWindow.document.write("	Rolls :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random().toFixed(2) * 100));
 			sum += set[i]
-			document.write(set[i]);
+			myWindow.document.write(set[i]);
 			if(i < 14){
-				document.write(", ");
+				myWindow.document.write(", ");
 			}
 		}
-		document.write("	|    Means :    " + (sum/15) + "\n");
+		myWindow.document.writeln("	|    Means :    " + (sum/15) + "\n");
     		//document.getElementById("simulation").innerHTML = x;
 	}
 }
