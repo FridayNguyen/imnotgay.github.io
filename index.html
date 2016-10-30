@@ -10,17 +10,17 @@
 	
 <form onsubmit="return false;">
   Number of trials to perform:         
-  <input type="text" id="reps" value=50><br>
+  <input type="text" id="input" value=50><br>
   <br>
   <input type="submit" value="Click to start simulation." onclick="performSimulation()>
 </form>
 
-<p id="simulation"> </p>
+<p id="simulation"></p>
 
 <script>
 function performSimulation() {
 	var set = [];
-	var reps = document.getElementById("reps").value;
+	var reps = document.getElementById("input").value;
 	var sum = 0;
 	var j;
 	var i;
