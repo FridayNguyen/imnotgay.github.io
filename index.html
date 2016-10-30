@@ -21,19 +21,19 @@ function performSimulation() {
 	myWindow.document.write("</br>");
 	for(j = 0; j < 50; j++){
 		sum = 0;
-		//myWindow.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
+		myWindow.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
 		for(i = 0; i < 15; i++){
 			set[i] = Math.floor((Math.random() * 100));
-			//myWindow.document.write(pad2(set[i]));
+			myWindow.document.write(pad2(set[i]));
 			if(i < 14){
-				//myWindow.document.write(", ");
+				myWindow.document.write(", ");
 			}
 			if(set[i] == 0){
 				set[i] = 100;
 			}
 			sum += set[i];
 		}
-		//myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2));
+		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2));
     		//document.getElementById("simulation").innerHTML = x;
 		
 		if(sum/15 >= 70){
