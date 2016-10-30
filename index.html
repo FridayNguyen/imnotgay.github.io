@@ -17,7 +17,9 @@ function performSimulation() {
 	var j;
 	var i;
 	var over70 = 0;
-	var myWindow = window.open("", "Simulation", "left=screen.width/2, top=0, width=screen.width/2.5, height=screen.height-20");
+	var width = screen.width;
+	var height = screen.height;
+	var myWindow = window.open("", "Simulation", "left=width/2, top=0, width=width/2.5, height=height-10");
 	for(j = 0; j < 50; j++){
 		sum = 0;
 		myWindow.document.write("</br>" + "	Rolls #" + pad2(j + 1) + " :    ");
