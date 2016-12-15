@@ -2,58 +2,7 @@
 <html>
 <body>
 
-<p>Here's a simple website I programmed that will perform the simulation, because calculator works get really, really tedious after a while. </p>
 
-<p>Please excuse the lack of styling. It's not pretty, but it works.</p>
-	
-<p>To performs multiple simulation, simply click the button multiple times, and scroll down.
-	
-<form id="form" onsubmit="return false;">
-	Number of trials to perform :
-   	<input type="text" value="50" id="input" />
-    	<input type="submit" value="CLICK HERE TO PERFORM SIMULATION (scroll to the bottom for result)" onclick="performSimulation();" />
-</form>
-
-<p id="simulation"></p>
-
-<script>
-function performSimulation() {
-	var set = [];
-	var reps = document.getElementById("input").value;
-	var sum = 0;
-	var j;
-	var i;
-	var over70 = 0;
-	var myWindow = window.open("", "Simulation", "left=600, top=0, width=900, height=700");
-	myWindow.document.write("</br>");
-	for(j = 0; j < reps; j++){
-		sum = 0;
-		myWindow.document.write("</br>" + "	Trial #" + pad2(j + 1) + " :    ");
-		for(i = 0; i < 15; i++){
-			set[i] = Math.floor((Math.random() * 100));
-			myWindow.document.write(pad2(set[i]));
-			if(i < 14){
-				myWindow.document.write(", ");
-			}
-			if(set[i] == 0){
-				set[i] = 100;
-			}
-			sum += set[i];
-		}
-		myWindow.document.write("	|    Means :    " + (sum/15).toFixed(2));
-    		//document.getElementById("simulation").innerHTML = x;
-		
-		if(sum/15 >= 70){
-			over70++;
-		}
-	}
-	
-	myWindow.document.write("</br>" + "</br>" + "Out of " + reps + " trials, the mean value is at least 70 for " + over70 + " times." + "</br>" + "</br>" + "In short, the probability that the mean value of 15 honest subjects is at least 70 is " + ((over70/reps)*100).toFixed(2) + "%");
-}
-function pad2(number) {
-     	return (number < 10 ? '0' : '') + number  
-}
-</script>
 
 </body>
 </html>
